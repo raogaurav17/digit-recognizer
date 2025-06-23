@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 
 const Canvas: React.FC<{
   onPredict: (imageData: ImageData) => void;
-}> = ({ onPredict }) => {
+  setPrediction: React.Dispatch<React.SetStateAction<number | null>>;
+}> = ({ onPredict, setPrediction }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
 
@@ -34,16 +35,18 @@ const Canvas: React.FC<{
     setIsDrawing(false);
   };
 
+
   const handleClear = () => {
     const ctx = canvasRef.current!.getContext('2d')!;
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, canvasRef.current!.width, canvasRef.current!.height);
+    setPrediction(null);
   };
 
   const handlePredict = () => {
     const ctx = canvasRef.current!.getContext('2d')!;
     const imageData = ctx.getImageData(0, 0, canvasRef.current!.width, canvasRef.current!.height);
-    console.log("🖼 Sending image data for prediction...");
+    console.log("Sending image data for prediction...");
     onPredict(imageData);
   };
 
