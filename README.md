@@ -10,6 +10,10 @@ Digit Recognizer is a modern web application that allows users to draw a digit (
 - Modern header and contact info section
 - Easy to clear and redraw
 
+## Live Demo
+
+[https://digit-recognizer-gilt.vercel.app/](https://digit-recognizer-gilt.vercel.app/)
+
 ## Getting Started
 
 ### Prerequisites
@@ -89,5 +93,5 @@ This project is licensed under the MIT License.
 For questions, feedback, or collaboration, reach out via:
 
 - Email: ydv17gaurav@gmail.com
-- GitHub: [raogaurav17](https://github.com/raogaurav17)
-- LinkedIn: [ydv17gaurav](https://linkedin.com/in/ydv17gaurav)
+- GitHub: [yourgithub](https://github.com/raogaurav17)
+- LinkedIn: [yourlinkedin](https://linkedin.com/in/ydv17gaurav)
