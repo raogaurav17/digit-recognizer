@@ -1,54 +1,93 @@
-# React + TypeScript + Vite
+# Digit Recognizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Digit Recognizer is a modern web application that allows users to draw a digit (0-9) on a canvas and predicts the digit using a trained machine learning model. The app is built with React, TypeScript, Vite, and TensorFlow.js, and features a beautiful, responsive UI with touch and mouse support.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Draw digits on a canvas using mouse or touch (mobile-friendly)
+- Predicts the drawn digit using a TensorFlow.js model
+- Visually appealing and responsive design
+- Modern header and contact info section
+- Easy to clear and redraw
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/raogaurav17/digit-recognizer.git
+   cd digit-predictor
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Model Files
+
+Place your trained TensorFlow.js model files (`model.json` and `.bin` files) in the `public/model/` directory. The app loads the model from `/model/model.json`.
+
+## Project Structure
+
+```
+├── public/
+│   └── model/
+│       ├── model.json
+│       └── group1-shard1of1.bin
+├── src/
+│   ├── components/
+│   │   ├── Canvas.tsx
+│   │   ├── Card.tsx
+│   │   └── ContactInfo.tsx
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technologies Used
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- Vite
+- TensorFlow.js
+- Tailwind CSS
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Customization
+
+- Update your contact information in `src/components/ContactInfo.tsx`.
+- Replace the demo model with your own trained model for digit recognition.
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for improvements, bug fixes, or new features.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For questions, feedback, or collaboration, reach out via:
+
+- Email: ydv17gaurav@gmail.com
+- GitHub: [raogaurav17](https://github.com/raogaurav17)
+- LinkedIn: [ydv17gaurav](https://linkedin.com/in/ydv17gaurav)

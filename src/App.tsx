@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import Canvas from './components/Canvas';
-import Card from './components/Card';
+import ContactInfo from './components/ContactInfo';
 
 const App: React.FC = () => {
   const [model, setModel] = useState<tf.GraphModel | null>(null);
@@ -35,12 +35,17 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-teal-500">
-      <h1 className="text-3xl font-bold">Digit Recognizer</h1>
-      <Canvas onPredict={handlePredict} setPrediction = {setPrediction}/>
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-teal-400 to-blue-300">
+      <Canvas onPredict={handlePredict} setPrediction={setPrediction} />
       {prediction !== null && (
-        <Card text={`Predicted Digit: ${prediction}`} />
+        <div className="flex flex-col items-center mt-2">
+          <div className="bg-white rounded-xl shadow-lg px-8 py-6 border-2 border-blue-400 flex flex-col items-center animate-fade-in">
+            <span className="text-5xl font-extrabold text-teal-500 drop-shadow mb-2">{prediction}</span>
+            <span className="text-gray-500">Predicted Digit</span>
+          </div>
+        </div>
       )}
+      <ContactInfo />
     </div>
   );
 };
